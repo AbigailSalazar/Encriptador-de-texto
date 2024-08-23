@@ -89,7 +89,7 @@ function updateClipboard(newClip) {
       }, 500);
     },
     () => {
-      console.error("Error al copiar al portapapeles: ", err);
+      alert("Error al copiar el texto :0");
     }
   );
 }
