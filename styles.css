@@ -8,7 +8,9 @@ html {
 
 :root {
   --color-primario: #0a3871;
+  --color-btn-primario-hover: #365070;
   --color-secundario: #f3f5fc;
+  --color-btn-secundario-hover: #e2e8fe;
   --color-terciario: #000000;
   --color-btn-desabilitado: #d8dfe8;
   --fuente: "Inter", sans-serif;
@@ -39,7 +41,14 @@ main {
 
 .form__contenido {
   margin: 5rem 0rem 0rem 12rem;
+  height: 65%;
+}
+
+.form__contenido__input {
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  position: relative;
 }
 
 .form__input {
@@ -51,6 +60,7 @@ main {
   font-size: 2rem;
   vertical-align: top;
   resize: none;
+  position: relative;
 }
 
 .form__input:focus {
@@ -91,6 +101,25 @@ button:hover {
   cursor: pointer;
 }
 
+.form__btn_limpiar {
+  position: absolute;
+  border-radius: 4rem;
+  border: none;
+  width: 3rem;
+  top: 0rem;
+  right: 0.1rem;
+  font-family: var(--fuente);
+  font-size: 1.8rem;
+  padding: 0.4rem;
+  color: var(--color-primario);
+  background-color: transparent;
+  z-index: 2;
+}
+
+.form__btn_limpiar:hover {
+  background-color: var(--color-btn-secundario-hover);
+}
+
 .form__botones__encriptar {
   width: 50%;
   border-radius: 1.5rem;
@@ -100,6 +129,10 @@ button:hover {
   padding: 1.1rem;
   color: var(--color-secundario);
   background-color: var(--color-primario);
+}
+
+.form__botones__encriptar:hover {
+  background-color: var(--color-btn-primario-hover);
 }
 
 .form_botones__desencriptar {
@@ -113,6 +146,9 @@ button:hover {
   background-color: transparent;
 }
 
+.form_botones__desencriptar:hover {
+  background-color: var(--color-btn-secundario-hover);
+}
 .form_botones__desencriptar:disabled {
   background-color: var(--color-btn-desabilitado);
   cursor: default;

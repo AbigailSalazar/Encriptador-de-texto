@@ -1,46 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encriptador de texto</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
-</head>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
+  </head>
 
-<body>
+  <body>
     <main>
-        <section class="form">
-            <img class="form__logo" src="assets/Logo.png" alt="Logo de alura">
-            <div class="form__contenido">
-                <textarea class="form__input" placeholder="Ingresa el texto aquí"></textarea>
-                <div class="form__error">
-                    <img class="form_error__img" src="assets/bi_exclamation-circle-fill.png"
-                        alt="simbolo de información">
-                    <p class="form__error__mensaje">Solo letras minúsculas y sin acentos</p>
-                </div>
-                <div class="form__botones">
-                    <button class="form__botones__encriptar"  onclick="encriptar()" disabled>Encriptar</button>
-                    <button class="form_botones__desencriptar" disabled onclick="desencriptar()">Desencriptar</button>
-                </div>
-            </div>
-
-        </section>
-        <section class="resultado">
-            <div class="resultado__error">
-                <img class="resultado__error_img" src="assets/img.png"
-                    alt="Imágen indicando que no se ha introducido texto">
-                <h1 class="resultado__error__titulo">Ningún mensaje fue encontrado</h1>
-                <p class="resultado__error__mensaje">Ingresa el texto que deseas desencriptar</p>
-            </div>
-            <div class="resultado__contenido hide">
-                <p class="resultado__texto"></p>
-                <button class="resultado__copiar" onclick="copiar()">Copiar</button>
-            </div>
-        </section>
+      <section class="form">
+        <img class="form__logo" src="assets/Logo.png" alt="Logo de alura" />
+        <div class="form__contenido">
+          <div class="form__contenido__input">
+            <button class="form__btn_limpiar hide" onclick="limpiar()">
+              X
+            </button>
+            <textarea
+              class="form__input"
+              placeholder="Ingresa el texto aquí"
+            ></textarea>
+          </div>
+          <div class="form__error">
+            <img
+              class="form_error__img"
+              src="assets/bi_exclamation-circle-fill.png"
+              alt="simbolo de información"
+            />
+            <p class="form__error__mensaje">
+              Solo letras minúsculas y sin acentos
+            </p>
+          </div>
+          <div class="form__botones">
+            <button
+              class="form__botones__encriptar"
+              onclick="encriptar()"
+              disabled
+            >
+              Encriptar
+            </button>
+            <button
+              class="form_botones__desencriptar"
+              disabled
+              onclick="desencriptar()"
+            >
+              Desencriptar
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="resultado">
+        <div class="resultado__error">
+          <img
+            class="resultado__error_img"
+            src="assets/img.png"
+            alt="Imágen indicando que no se ha introducido texto"
+          />
+          <h1 class="resultado__error__titulo">
+            Ningún mensaje fue encontrado
+          </h1>
+          <p class="resultado__error__mensaje">
+            Ingresa el texto que deseas desencriptar
+          </p>
+        </div>
+        <div class="resultado__contenido hide">
+          <p class="resultado__texto"></p>
+          <button class="resultado__copiar" onclick="copiar()">Copiar</button>
+        </div>
+      </section>
     </main>
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>

@@ -5,6 +5,7 @@ const resultadoContenido = document.querySelector(".resultado__contenido");
 const mensajeError = document.querySelector(".form__error__mensaje");
 const btnEncriptar = document.querySelector(".form__botones__encriptar");
 const btnDesencriptar = document.querySelector(".form_botones__desencriptar");
+const btnLimpiar = document.querySelector(".form__btn_limpiar");
 
 var InputAEncriptar = document.querySelector(".form__input");
 
@@ -24,6 +25,7 @@ InputAEncriptar.addEventListener("input", (e) => {
   if (!textoAEncriptar || textoAEncriptar.trim() === "") {
     resultadoMensajeError.classList.remove("hide");
     resultadoContenido.classList.add("hide");
+    btnLimpiar.classList.add("hide");
     btnEncriptar.setAttribute("disabled", "");
     btnDesencriptar.setAttribute("disabled", "");
     return;
@@ -36,11 +38,20 @@ InputAEncriptar.addEventListener("input", (e) => {
     btnDesencriptar.setAttribute("disabled", "");
     return;
   } else {
+    btnLimpiar.classList.remove("hide");
     mensajeError.classList.remove("error");
     btnEncriptar.removeAttribute("disabled");
     btnDesencriptar.removeAttribute("disabled");
   }
 });
+
+function limpiar() {
+  InputAEncriptar.value = "";
+  btnLimpiar.classList.add("hide");
+  parrafoResultado.textContent = "";
+  resultadoMensajeError.classList.remove("hide");
+  resultadoContenido.classList.add("hide");
+}
 
 function encriptar() {
   var textoAEncriptar = InputAEncriptar.value;
@@ -55,6 +66,10 @@ function encriptar() {
   resultadoMensajeError.classList.add("hide");
   resultadoContenido.classList.remove("hide");
   parrafoResultado.textContent = textoAEncriptar;
+  btnEncriptar.textContent = "Encriptado!";
+  setTimeout(function () {
+    btnEncriptar.textContent = "Encriptar";
+  }, 500);
 }
 
 function desencriptar() {
@@ -64,6 +79,10 @@ function desencriptar() {
       clavesEncriptacion[clave],
       clave
     );
+    btnDesencriptar.textContent = "Desencriptado!";
+    setTimeout(function () {
+      btnDesencriptar.textContent = "Desencriptar";
+    }, 500);
   }
 
   resultadoMensajeError.classList.add("hide");
