@@ -1,280 +1,271 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 body,
 html {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    --color-primario: #0A3871;
-    --color-secundario: #F3F5FC;
-    --color-terciario: #000000;
-    --color-btn-desabilitado: #D8DFE8;
-    --fuente: "Inter", sans-serif;
+  --color-primario: #0a3871;
+  --color-secundario: #f3f5fc;
+  --color-terciario: #000000;
+  --color-btn-desabilitado: #d8dfe8;
+  --fuente: "Inter", sans-serif;
 }
 
 body {
-    background-color: var(--color-secundario);
-    font-family: var(--fuente);
-    height: 100vh;
+  background-color: var(--color-secundario);
+  font-family: var(--fuente);
+  height: 100vh;
 }
 
 main {
-    display: flex;
-    height: 100%;
+  display: flex;
+  height: 100%;
 }
 
 .form {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
 
 .form__logo {
-    width: 7.5rem;
-    height: 3rem;
+  width: 7.5rem;
+  height: 3rem;
 }
 
 .form__contenido {
-    margin: 5rem 0rem 0rem 12rem;
-    height: 100%;
+  margin: 5rem 0rem 0rem 12rem;
+  height: 100%;
 }
 
 .form__input {
-    border: none;
-    width: 100%;
-    height: 80%;
-    background-color: transparent;
-    color: var(--color-primario);
-    font-size: 2rem;
-    vertical-align: top;
-    resize: none;
+  border: none;
+  width: 100%;
+  height: 80%;
+  background-color: transparent;
+  color: var(--color-primario);
+  font-size: 2rem;
+  vertical-align: top;
+  resize: none;
 }
 
-
 .form__input:focus {
-    border: none;
-    outline: none;
+  border: none;
+  outline: none;
 }
 
 .form__input::placeholder {
-    color: var(--color-primario);
-    font-family: var(--fuente);
+  color: var(--color-primario);
+  font-family: var(--fuente);
 }
 
 .form__error {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .form_error__img {
-    height: 1.1rem;
+  height: 1.1rem;
 }
 
 .form__error__mensaje {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .error {
-    color: red;
+  color: red;
 }
 
-
 .form__botones {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .form__botones__encriptar {
-    width: 50%;
-    border-radius: 1.5rem;
-    border: none;
-    font-family: var(--fuente);
-    font-size: 1rem;
-    padding: 1.1rem;
-    color: var(--color-secundario);
-    background-color: var(--color-primario);
-
+  width: 50%;
+  border-radius: 1.5rem;
+  border: none;
+  font-family: var(--fuente);
+  font-size: 1rem;
+  padding: 1.1rem;
+  color: var(--color-secundario);
+  background-color: var(--color-primario);
 }
 
 .form_botones__desencriptar {
-    width: 50%;
-    border-radius: 1.5rem;
-    border: 1px solid var(--color-primario);
-    font-family: var(--fuente);
-    font-size: 1rem;
-    padding: 1.1rem;
-    color: var(--color-primario);
-    background-color: transparent;
+  width: 50%;
+  border-radius: 1.5rem;
+  border: 1px solid var(--color-primario);
+  font-family: var(--fuente);
+  font-size: 1rem;
+  padding: 1.1rem;
+  color: var(--color-primario);
+  background-color: transparent;
 }
 
 .form_botones__desencriptar:disabled {
-    background-color: var(--color-btn-desabilitado);
-    cursor: default;
-
+  background-color: var(--color-btn-desabilitado);
+  cursor: default;
 }
 
 .form__botones__encriptar:disabled {
-    background-color: var(--color-btn-desabilitado);
-    cursor: default;
-    border: 1px solid var(--color-primario);
+  background-color: var(--color-btn-desabilitado);
+  cursor: default;
+  border: 1px solid var(--color-primario);
 }
 
 .resultado {
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 2rem;
-    margin: 2rem;
-    color: var(--color-terciario);
-    gap: 2rem;
-    box-shadow:
-    2.5px 3px 5.7px -24px rgba(0, 0, 0, 0.022),
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 2rem;
+  margin: 2rem;
+  color: var(--color-terciario);
+  gap: 2rem;
+  box-shadow: 2.5px 3px 5.7px -24px rgba(0, 0, 0, 0.022),
     6.3px 7.6px 14.5px -24px rgba(0, 0, 0, 0.031),
     12.9px 15.4px 29.6px -24px rgba(0, 0, 0, 0.039),
     26.6px 31.8px 61px -24px rgba(0, 0, 0, 0.048),
-    73px 87px 167px -24px rgba(0, 0, 0, 0.07)
-  ;
+    73px 87px 167px -24px rgba(0, 0, 0, 0.07);
 }
 
 .resultado__contenido {
-    height: 90%;
+  height: 90%;
 }
 
 .resultado__error {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .resultado__error_img {
-    width: 100%;
+  width: 100%;
 }
 
 .resultado__error__titulo {
-    font-size: 1.7rem;
+  font-size: 1.7rem;
 }
 
 .resultado__error__mensaje {
-    font-size: 1rem
+  font-size: 1rem;
 }
 
 .resultado__texto {
-    font-size: 1.3rem;
-    height: 90%;
-    width: 100%;
-    overflow-y: scroll;
+  font-size: 1.3rem;
+  height: 90%;
+  width: 100%;
+  overflow-y: scroll;
+  word-break: break-word;
 }
 
 ::-webkit-scrollbar {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .resultado__copiar {
-    width: 100%;
-    border-radius: 1.5rem;
-    border: 1px solid var(--color-primario);
-    font-family: var(--fuente);
-    font-size: 1rem;
-    padding: 1.1rem;
-    color: var(--color-primario);
-    background-color: transparent;
+  width: 100%;
+  border-radius: 1.5rem;
+  border: 1px solid var(--color-primario);
+  font-family: var(--fuente);
+  font-size: 1rem;
+  padding: 1.1rem;
+  color: var(--color-primario);
+  background-color: transparent;
 }
 
 .resultado__copiar:active {
-    background-color: var(--color-primario);
-    color: var(--color-secundario);
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
+  body {
+    width: 100vw;
+  }
 
-    body {
-        width: 100vw;
-    }
+  main {
+    flex-direction: column;
+    width: 100%;
+  }
 
-    main {
-        flex-direction: column;
-        width: 100%;
-    }
+  .form {
+    width: auto;
+    height: 100%;
+  }
 
-    .form {
-        width: auto;
-        height: 100%;
-    }
+  .form__contenido {
+    margin: 6rem 3rem 0rem 3rem;
+    height: 100%;
+  }
 
-    .form__contenido {
-        margin: 6rem 3rem 0rem 3rem;
-        height: 100%;
-    }
+  .form__input {
+    height: 90%;
+  }
 
-    .form__input {
-        height: 90%
-    }
+  .resultado {
+    width: auto;
+    margin: 3rem 3rem 2rem 3rem;
+  }
 
-    .resultado {
-        width: auto;
-        margin: 3rem 3rem 2rem 3rem;
-    }
+  .resultado__texto {
+    height: auto;
+  }
 
-    .resultado__texto {
-        height: auto;
-    }
-
-    .resultado__error_img {
-        width: 0;
-        height: 0;
-    }
+  .resultado__error_img {
+    width: 0;
+    height: 0;
+  }
 }
 
+@media (max-width: 426px) {
+  .form__contenido {
+    margin: 6rem 1rem 0rem 1rem;
+    height: 100%;
+  }
 
-@media (max-width:426px) {
+  .form__input {
+    height: 80%;
+  }
 
-    .form__contenido {
-        margin: 6rem 1rem 0rem 1rem;
-        height: 100%;
-    }
+  .form__botones {
+    flex-direction: column;
+  }
 
-    .form__input {
-        height: 80%
-    }
+  .form__botones__encriptar {
+    width: 100%;
+  }
 
-    .form__botones {
-        flex-direction: column;
-    }
+  .form_botones__desencriptar {
+    width: 100%;
+  }
 
-    .form__botones__encriptar {
-        width: 100%;
-    }
+  .resultado {
+    width: auto;
+    height: auto;
+    margin: 3rem 1rem 1rem 1rem;
+  }
 
-    .form_botones__desencriptar {
-        width: 100%;
-    }
-
-    .resultado {
-        width: auto;
-        height: auto;
-        margin: 3rem 1rem 1rem 1rem;
-    }
-
-    .resultado__error_img {
-        width: 0;
-        height: 0;
-    }
-
+  .resultado__error_img {
+    width: 0;
+    height: 0;
+  }
 }
