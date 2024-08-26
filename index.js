@@ -23,6 +23,7 @@ InputAEncriptar.addEventListener("input", (e) => {
   const expCadenaInvalida = /[^a-z\s]/g;
 
   if (!textoAEncriptar || textoAEncriptar.trim() === "") {
+    //Desabilitar botones si el texto esta vacio
     resultadoMensajeError.classList.remove("hide");
     resultadoContenido.classList.add("hide");
     btnLimpiar.classList.add("hide");
@@ -33,11 +34,13 @@ InputAEncriptar.addEventListener("input", (e) => {
 
   const match = textoAEncriptar.match(expCadenaInvalida);
   if (match != null) {
+    //Si la cadena no es válida
     mensajeError.classList.add("error");
     btnEncriptar.setAttribute("disabled", "");
     btnDesencriptar.setAttribute("disabled", "");
     return;
   } else {
+    //Habilita los botones
     btnLimpiar.classList.remove("hide");
     mensajeError.classList.remove("error");
     btnEncriptar.removeAttribute("disabled");
@@ -46,6 +49,7 @@ InputAEncriptar.addEventListener("input", (e) => {
 });
 
 function limpiar() {
+  //Limpia el contenido a encriptar
   InputAEncriptar.value = "";
   btnLimpiar.classList.add("hide");
   parrafoResultado.textContent = "";
