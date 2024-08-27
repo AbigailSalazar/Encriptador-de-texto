@@ -104,14 +104,15 @@ button:hover {
 .form__btn_limpiar {
   position: absolute;
   border-radius: 4rem;
-  border: none;
+  border: 1px solid var(--color-primario);
   width: 3rem;
   top: 0rem;
   right: 0.1rem;
   font-family: var(--fuente);
   font-size: 1.8rem;
-  padding: 0.4rem;
+  padding: 0.3rem;
   color: var(--color-primario);
+  font-weight: 300;
   background-color: transparent;
   z-index: 2;
 }
