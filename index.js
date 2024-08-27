@@ -36,11 +36,11 @@ InputAEncriptar.addEventListener("input", (e) => {
   if (match != null) {
     //Si la cadena no es válida
     InputAEncriptar.value = convertirATextoValido(textoAEncriptar);
-    //Habilita los botones
-    mensajeError.classList.remove("error");
-    btnEncriptar.removeAttribute("disabled");
-    btnDesencriptar.removeAttribute("disabled");
   }
+  //Habilita los botones
+  mensajeError.classList.remove("error");
+  btnEncriptar.removeAttribute("disabled");
+  btnDesencriptar.removeAttribute("disabled");
 });
 
 function limpiar() {
@@ -50,6 +50,8 @@ function limpiar() {
   parrafoResultado.textContent = "";
   resultadoMensajeError.classList.remove("hide");
   resultadoContenido.classList.add("hide");
+  btnEncriptar.setAttribute("disabled", "");
+  btnDesencriptar.setAttribute("disabled", "");
 }
 
 function encriptar() {
