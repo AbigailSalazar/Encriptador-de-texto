@@ -113,12 +113,13 @@ button:hover {
   padding: 0.3rem;
   color: var(--color-primario);
   font-weight: 300;
-  background-color: transparent;
+  background-color: var(--color-btn-secundario-hover);
   z-index: 2;
 }
 
 .form__btn_limpiar:hover {
-  background-color: var(--color-btn-secundario-hover);
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
 }
 
 .form__botones__encriptar {
