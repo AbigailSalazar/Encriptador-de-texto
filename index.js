@@ -31,17 +31,12 @@ InputAEncriptar.addEventListener("input", (e) => {
     btnDesencriptar.setAttribute("disabled", "");
     return;
   }
-
+  btnLimpiar.classList.remove("hide");
   const match = textoAEncriptar.match(expCadenaInvalida);
   if (match != null) {
     //Si la cadena no es válida
-    mensajeError.classList.add("error");
-    btnEncriptar.setAttribute("disabled", "");
-    btnDesencriptar.setAttribute("disabled", "");
-    return;
-  } else {
+    InputAEncriptar.value = convertirATextoValido(textoAEncriptar);
     //Habilita los botones
-    btnLimpiar.classList.remove("hide");
     mensajeError.classList.remove("error");
     btnEncriptar.removeAttribute("disabled");
     btnDesencriptar.removeAttribute("disabled");
@@ -115,4 +110,20 @@ function updateClipboard(newClip) {
       alert("Error al copiar el texto :0");
     }
   );
+}
+
+function convertirATextoValido(texto) {
+  //Eliminar acentos
+  texto = texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  //Eliminar characteres especiales
+  const regex = /[^a-zA-Z0-9\s]/g;
+  texto = texto.replaceAll(regex, "");
+
+  //Reemplazar mayusculas por minusculas
+  const regexMayus = /[A-Z]/g;
+  if (texto.match(regexMayus)) {
+    return texto.toLowerCase();
+  }
+  return texto;
 }
